@@ -226,7 +226,7 @@ public class ClientMain {
 
 				if (server != null && !server.isEmpty()) {
 					ServerInfo serverInfo = AddressResolver.resolveURI(server);
-					minecraft.setServer(serverInfo.host, serverInfo.port);
+					minecraft.setServer(serverInfo.ip);
 					systemOut.println("Connecting to server " + serverInfo.ip);
 				}
 				(new Thread(minecraft)).run();

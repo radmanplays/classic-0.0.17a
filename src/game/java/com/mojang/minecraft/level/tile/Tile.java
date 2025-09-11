@@ -1,11 +1,11 @@
 package com.mojang.minecraft.level.tile;
 
+import com.mojang.minecraft.Entity;
 import com.mojang.minecraft.level.Level;
 import com.mojang.minecraft.level.liquid.Liquid;
 import com.mojang.minecraft.particle.Particle;
 import com.mojang.minecraft.particle.ParticleEngine;
 import com.mojang.minecraft.phys.AABB;
-import com.mojang.minecraft.player.Player;
 import com.mojang.minecraft.renderer.Tesselator;
 import java.util.Random;
 
@@ -265,7 +265,7 @@ public class Tile {
 
 	}
 
-	public static void renderFaceNoTexture(Player var0, Tesselator var1, int var2, int var3, int var4, int var5) {
+	public static void renderFaceNoTexture(Entity var0, Tesselator var1, int var2, int var3, int var4, int var5) {
 		float var6 = (float)var2;
 		float var7 = (float)var2 + 1.0F;
 		float var8 = (float)var3;

@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
 
 public class NetworkPlayer extends Entity {
 	public static final long serialVersionUID = 77479605454997290L;
-	private static ZombieModel zombieModel = new ZombieModel();
+	private static ZombieModel zombieModel;
 	private float animStep;
 	private float animStepO;
 	private List moveQueue = new LinkedList();
@@ -21,11 +21,12 @@ public class NetworkPlayer extends Entity {
 	private int zp;
 	private float yBodyRot = 0.0F;
 	private float yBodyRotO = 0.0F;
-	String name;
+	public String name;
 
 	public NetworkPlayer(Minecraft var1, int var2, String var3, int var4, int var5, int var6, float var7, float var8) {
 		super(var1.level);
 		this.minecraft = var1;
+		this.zombieModel = var1.playerModel;
 		this.name = var3;
 		this.xp = var4;
 		this.yp = var5;

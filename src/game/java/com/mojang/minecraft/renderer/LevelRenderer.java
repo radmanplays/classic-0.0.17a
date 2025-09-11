@@ -26,6 +26,7 @@ public final class LevelRenderer {
 	private int xChunks;
 	private int yChunks;
 	private int zChunks;
+	private int chunkRenderLists;
 	public int cloudTickCounter = 0;
 	private float lX = -9999.0F;
 	private float lY = -9999.0F;
@@ -34,6 +35,7 @@ public final class LevelRenderer {
 	public LevelRenderer(Textures var1) {
 		this.textures = var1;
 		this.surroundLists = GL11.glGenLists(2);
+		this.chunkRenderLists = GL11.glGenLists(4096 << 6 << 1);
 	}
 
 	public final void setLevel(Level var1) {
@@ -62,12 +64,15 @@ public final class LevelRenderer {
 		this.zChunks = this.level.height / 16;
 		this.sortedChunks = new Chunk[this.xChunks * this.yChunks * this.zChunks];
 		this.chunks = new Chunk[this.xChunks * this.yChunks * this.zChunks];
-
-		for(var1 = 0; var1 < this.xChunks; ++var1) {
-			for(int var2 = 0; var2 < this.yChunks; ++var2) {
-				for(int var3 = 0; var3 < this.zChunks; ++var3) {
-					this.sortedChunks[(var3 * this.yChunks + var2) * this.xChunks + var1] = new Chunk(this.level, var1 << 4, var2 << 4, var3 << 4, 16);
-					this.chunks[(var3 * this.yChunks + var2) * this.xChunks + var1] = this.sortedChunks[(var3 * this.yChunks + var2) * this.xChunks + var1];
+		var1 = 0;
+		
+		int var4;
+		for(int var2 = 0; var2 < this.xChunks; ++var2) {
+			for(int var3 = 0; var3 < this.yChunks; ++var3) {
+				for(var4 = 0; var4 < this.zChunks; ++var4) {
+					this.sortedChunks[(var4 * this.yChunks + var3) * this.xChunks + var2] = new Chunk(this.level, var2 << 4, var3 << 4, var4 << 4, 16, this.chunkRenderLists + var1);
+					this.chunks[(var4 * this.yChunks + var3) * this.xChunks + var2] = this.sortedChunks[(var4 * this.yChunks + var3) * this.xChunks + var2];
+					var1 += 2;
 				}
 			}
 		}

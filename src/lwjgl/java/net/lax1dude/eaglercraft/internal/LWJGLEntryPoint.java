@@ -85,7 +85,7 @@ public class LWJGLEntryPoint {
 			}
 	
 			if (serverInfo.ip != null) {
-				minecraft.setServer(serverInfo.host, serverInfo.port);
+				minecraft.setServer(serverInfo.ip);
 				System.out.println("Connecting to server " + serverInfo.ip);
 			}
 		}

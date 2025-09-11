@@ -1,7 +1,10 @@
 package com.mojang.minecraft;
 
+import com.mojang.minecraft.level.tile.Tile;
+
 public final class User {
 	public String name;
+	public static final int[] creativeTiles = new int[]{Tile.rock.id, Tile.dirt.id, Tile.stoneBrick.id, Tile.wood.id, Tile.bush.id, Tile.log.id, Tile.leaf.id, Tile.sand.id, Tile.gravel.id};
 	public String sessionId;
 
 	public User(String var1, String var2) {

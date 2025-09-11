@@ -930,7 +930,7 @@ public final class Minecraft implements Runnable {
 			GL11.glEnd();
 			GL11.glDisable(GL11.GL_BLEND);
 			String var11 = "Connected players:";
-			this.font.drawShadow(var11, var6 - this.font.width(var11) / 2, var1 - 64 - 12, 16777215);
+                        this.font.drawShadow(var11, var4 - this.font.width(var11) / 2, var8 - 64 - 12, 16777215);
 
 			for(int var12 = 0; var12 < var9.size(); ++var12) {
 				int var15 = var4 + var12 % 2 * 120 - 120;

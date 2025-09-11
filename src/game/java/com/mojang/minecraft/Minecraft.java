@@ -97,6 +97,7 @@ public final class Minecraft implements Runnable {
 	private String text = "";
 	public boolean hideGui = false;
 	public ZombieModel playerModel = new ZombieModel();
+
 	
 	public Minecraft(int var2, int var3, boolean var4) {
 		this.width = width;
@@ -257,10 +258,6 @@ public final class Minecraft implements Runnable {
 					if(this.connectionManager != null) {
 						ConnectionManager c = this.connectionManager;
 
-						if(!this.connectionManager.isConnected()) {
-							this.beginLevelLoading("Connecting..");
-							this.setLoadingProgress(0);
-						} else {
 							try {
 								c.connection.processData();
 							} catch (IOException var7) {
@@ -269,7 +266,6 @@ public final class Minecraft implements Runnable {
 								c.connection.disconnect();
 								c.minecraft.connectionManager = null;
 							}
-						}
 					}
 
 					try {

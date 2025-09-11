@@ -922,20 +922,20 @@ public final class Minecraft implements Runnable {
 			GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 			GL11.glBegin(GL11.GL_QUADS);
 			GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.7F);
-			GL11.glVertex2f((float)(var6 + 128), (float)(var1 - 68 - 12));
-			GL11.glVertex2f((float)(var6 - 128), (float)(var1 - 68 - 12));
+			GL11.glVertex2f((float)(var4 + 128), (float)(var8 - 68 - 12));
+			GL11.glVertex2f((float)(var4 - 128), (float)(var8 - 68 - 12));
 			GL11.glColor4f(0.2F, 0.2F, 0.2F, 0.8F);
-			GL11.glVertex2f((float)(var6 - 128), (float)(var1 + 68));
-			GL11.glVertex2f((float)(var6 + 128), (float)(var1 + 68));
+			GL11.glVertex2f((float)(var4 - 128), (float)(var8 + 68));
+			GL11.glVertex2f((float)(var4 + 128), (float)(var8 + 68));
 			GL11.glEnd();
 			GL11.glDisable(GL11.GL_BLEND);
 			String var11 = "Connected players:";
 			this.font.drawShadow(var11, var6 - this.font.width(var11) / 2, var1 - 64 - 12, 16777215);
 
 			for(int var12 = 0; var12 < var9.size(); ++var12) {
-				var4 = var6 + var12 % 2 * 120 - 120;
-				int var15 = var1 - 64 + (var12 / 2 << 3);
-				this.font.draw((String)var9.get(var12), var4, var15, 16777215);
+				int var15 = var4 + var12 % 2 * 120 - 120;
+				int var16 = var8 - 64 + (var12 / 2 << 3);
+				this.font.draw((String)var9.get(var12), var15, var16, 16777215);
 			}
 		}
 	}

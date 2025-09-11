@@ -933,8 +933,8 @@ public final class Minecraft implements Runnable {
 			this.font.drawShadow(var11, var6 - this.font.width(var11) / 2, var1 - 64 - 12, 16777215);
 
 			for(int var12 = 0; var12 < var9.size(); ++var12) {
-				int var15 = var6 + var12 % 2 * 120 - 120;
-				int var16 = var1 - 64 + (var12 / 2 << 3);
+				int var15 = var4 + var12 % 2 * 120 - 120;
+				int var16 = var8 - 64 + (var12 / 2 << 3);
 				this.font.draw((String)var9.get(var12), var15, var16, 16777215);
 			}
 		}
